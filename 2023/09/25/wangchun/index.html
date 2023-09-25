@@ -22,7 +22,7 @@
 
   
 
-  <title>我阐释你的梦 | Morty的小站</title>
+  <title>网络存储lab1 | Morty的小站</title>
 
   
 
@@ -104,32 +104,27 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">我阐释你的梦</h1>
+          <h1 class="title-wrap">网络存储lab1</h1>
           <h2 class="title-sub-wrap">
             <strong>lzf</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2023-08-17T16:00:00.000Z" itemprop="datePublished">2023-08-18</time>
+            <time  class="article-date" datetime="2023-09-25T14:23:31.000Z" itemprop="datePublished">2023-09-25</time>
           </h2>
           
-            <h2 class="last-time">
-              <span>最后更新于</span>
-              <time  class="article-updated" datetime="2023-08-23T14:02:03.073Z" itemprop="dateUpdated">2023-08-23</time>
-            </h2>
           
-          
-            <h2 id="/2023/08/18/first-article/" class="title-sub-wrap leancloud_visitors" data-flag-title="我阐释你的梦">
+            <h2 id="/2023/09/25/wangchun/" class="title-sub-wrap leancloud_visitors" data-flag-title="网络存储lab1">
               <em>文章访问量</em>
               <i class="leancloud-visitors-count"></i>
             </h2>
           
           <ul class="wrap-list dark">
   
-    <li><a href="/categories/Bullshit/">📒 Bullshit</a></li>
+    <li><a href="/categories/Homework/">📒 Homework</a></li>
   
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/gpt/">🏷️ gpt</a></li>
+    <li><a href="/tags/RAID/">🏷️ RAID</a></li>
   
 </ul>
         </div>
@@ -153,25 +148,122 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h2 id="我阐释你的梦"><a href="#我阐释你的梦" class="headerlink" title="我阐释你的梦"></a>我阐释你的梦</h2><p><em>written by chatgpt</em></p>
-<p><img src="/../img/v2-cdd34088a887cf31038a946053bf60aa_720w.jpg" alt="啊啊啊啊啊"></p>
-<p><img src="/../img/image-20230818215551852.png" alt="啊啊啊啊啊"></p>
-<hr>
-<div class="aplayer-box" data-url='/music/Duvet (0.9X).mp3' data-name='Duvet (0.9X)' data-artist='111' ></div>
+        <h2 id="Lab01-RAID阵列"><a href="#Lab01-RAID阵列" class="headerlink" title="Lab01 RAID阵列"></a>Lab01 RAID阵列</h2><p>21371255 刘兆丰</p>
+<h4 id="一、通过工具查看磁盘列表"><a href="#一、通过工具查看磁盘列表" class="headerlink" title="一、通过工具查看磁盘列表"></a>一、通过工具查看磁盘列表</h4><p>1.lsblk -d   查看虚拟机上的磁盘列表</p>
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925194632891.png" alt="image-20230925194632891"></p>
+<p>2.df -lh &#x2F;   查看根目录<code>/</code>的容量</p>
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925194710912.png" alt="image-20230925194710912"></p>
+<h4 id="二、使用LVM扩展根目录-的容量"><a href="#二、使用LVM扩展根目录-的容量" class="headerlink" title="二、使用LVM扩展根目录/的容量"></a>二、使用LVM扩展根目录<code>/</code>的容量</h4><p>1.使用<code>fdisk</code>命令给空闲的磁盘空间分区</p>
+<p>在<code>Command (m for help):</code>后面输入<code>n</code>，一路回车，默认按磁盘最大容量分区</p>
+<p>在<code>Command (m for help):</code>后面输入<code>t</code>，输入<code>4</code>选择新创建的分区，输入<code>31</code>选择Linux LVM分区类型</p>
+<p>最后在<code>Command (m for help):</code>后面输入<code>w</code>保存</p>
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925194844082.png" alt="image-20230925194844082"></p>
+<p>2.创建物理卷（PV），命名格式一般为<code>磁盘名+分区号</code></p>
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925194923488.png" alt="image-20230925194923488"></p>
+<p>3.查看卷组（VG）列表</p>
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925195001543.png" alt="image-20230925195001543"></p>
+<p>4.将刚创建的物理卷加入卷组</p>
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925195027792.png" alt="image-20230925195027792"></p>
+<p>5.查看逻辑卷（LV）列表，Ubuntu系统安装在默认逻辑卷上</p>
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925195051833.png" alt="image-20230925195051833"></p>
+<p>6.将逻辑卷扩容，然后为文件系统（ext4类型）扩容</p>
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925195124872.png" alt="image-20230925195124872"></p>
+<ol start="7">
+<li>查看根目录容量，已扩容</li>
+</ol>
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925195209622.png" alt="image-20230925195209622"></p>
+<h4 id="三、创建RAID阵列，测试读写文件，并模拟磁盘损坏"><a href="#三、创建RAID阵列，测试读写文件，并模拟磁盘损坏" class="headerlink" title="三、创建RAID阵列，测试读写文件，并模拟磁盘损坏"></a>三、创建RAID阵列，测试读写文件，并模拟磁盘损坏</h4><h5 id="1-RAID1"><a href="#1-RAID1" class="headerlink" title="1.RAID1"></a>1.RAID1</h5><p>1.创建： mdadm -Cv &#x2F;dev&#x2F;md1 -a yes -n 2 -l 1 &#x2F;dev&#x2F;sd{b,c}</p>
+<p>​		<img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925201250299.png" alt="image-20230925201250299"></p>
+<p>2.将创建好的RAID 1阵列格式化为ext4文件系统</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext4 /dev/md1</span><br></pre></td></tr></table></figure>
 
-<p>“我穿越梦境，追寻你的心<br>在星辰的轨迹中翱翔<br>那里有诗意的花开<br>纷飞的萤火虫为你点亮</p>
-<h5 id="我阐释你的梦，勾勒画面"><a href="#我阐释你的梦，勾勒画面" class="headerlink" title="我阐释你的梦，勾勒画面"></a>我阐释你的梦，勾勒画面</h5><p>如画的风景透过窗棂<br>细雨柔情湿润思念<br>我把心语写进诗行</p>
-<p>梦境交错，时间停驻<br>我与你共度永恒瞬间<br>在那迷离的月光下<br>让爱永远绽放芬芳</p>
-<h5 id="我阐释你的梦，唤醒灵魂"><a href="#我阐释你的梦，唤醒灵魂" class="headerlink" title="我阐释你的梦，唤醒灵魂"></a>我阐释你的梦，唤醒灵魂</h5><p>缠绵的音符随风飘荡<br>我们沉浸在甜蜜的梦境<br>相爱的呼吸交织旋律</p>
-<p>当晨曦破晓，梦幻消散<br>你是我永恒的归宿<br>我将用诗篇书写你的梦<br>让爱的火焰燃烧岁月</p>
-<h5 id="我阐释你的梦，如诗如画"><a href="#我阐释你的梦，如诗如画" class="headerlink" title="我阐释你的梦，如诗如画"></a>我阐释你的梦，如诗如画</h5><p>用心去感受每一刻<br>你是那璀璨的星辰<br>我愿守护你的梦，直至永远”</p>
-<p><img src="/../img/IMG_20230818_201141.jpg" alt="啊啊啊啊啊"></p>
+<p>3.将 RAID 1 阵列临时挂载到<code>/mnt/raid1</code>目录下，测试文件读写</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /mnt/raid1/</span><br><span class="line">mount /dev/md1 /mnt/raid1</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;Hello, world!&#x27;</span> &gt; /mnt/raid1/hello</span><br><span class="line"><span class="built_in">cat</span> /mnt/raid1/hello</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925202058706.png" alt="image-20230925202058706"></p>
+<p>4.模拟阵列中的一块磁盘损坏</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mdadm /dev/md1 -f /dev/sdb</span><br><span class="line">mdadm: <span class="built_in">set</span> /dev/sdb faulty <span class="keyword">in</span> /dev/md1</span><br></pre></td></tr></table></figure>
+
+<p>再次读取文件，发现文件完好无损</p>
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925202318921.png" alt="image-20230925202318921"></p>
+<p>5.删除阵列，释放磁盘空间</p>
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925202427075.png" alt="image-20230925202427075"></p>
+<h5 id="2-RAID-5"><a href="#2-RAID-5" class="headerlink" title="2. RAID 5"></a>2. RAID 5</h5><p>1.创建</p>
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925202513339.png" alt="image-20230925202513339"></p>
+<p>2.将创建好的RAID 5阵列格式化为ext4文件系统</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext4 /dev/md5</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925202837785.png" alt="image-20230925202837785"></p>
+<p>3.测试文件读写</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /mnt/raid5/</span><br><span class="line">mount /dev/md5 /mnt/raid5</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;Hello, world!&#x27;</span> &gt; /mnt/raid5/hello</span><br><span class="line"><span class="built_in">cat</span> /mnt/raid5/hello</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925203033905.png" alt="image-20230925203033905"></p>
+<p>4.模拟磁盘损坏</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mdadm /dev/md5 -f /dev/sdf</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925205107556.png" alt="image-20230925205107556"></p>
+<p>再次读取文件，发现文件完好无损</p>
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925204008105.png" alt="image-20230925204008105"></p>
+<p>5.删除阵列，释放磁盘空间</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">umount /mnt/raid5 </span><br><span class="line">mdadm -S /dev/md5</span><br><span class="line">mdadm --zero-superblock /dev/sd&#123;b,c,e,d,f&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-RAID-0"><a href="#3-RAID-0" class="headerlink" title="3.RAID 0"></a>3.RAID 0</h5><p>1.在创建阵列之前，需要先给待使用的磁盘分区，以<code>/dev/sdb</code>为例</p>
+<p>在<code>Command (m for help):</code>后面输入<code>n</code>，一路回车，默认按磁盘最大容量分区</p>
+<p>最后在<code>Command (m for help):</code>后面输入<code>w</code>保存</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ fdisk /dev/sdb</span><br><span class="line">Command (m <span class="keyword">for</span> <span class="built_in">help</span>):</span><br></pre></td></tr></table></figure>
+
+<p>新分区名称默认为<code>/dev/sdb1</code></p>
+<p>同理，为<code>/dev/sdc</code>也创建一个分区<code>/dev/sdc1</code></p>
+<p>在这两个分区上创建RAID 0阵列</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mdadm -Cv /dev/md0 -a yes -n 2 -l 0 /dev/sd&#123;b1,c1&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925205400118.png" alt="image-20230925205400118"></p>
+<p>2.将创建好的RAID 5阵列格式化为ext4文件系统</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext4 /dev/md0</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925205533501.png" alt="image-20230925205533501"></p>
+<p>3.测试读写</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /mnt/raid0/</span><br><span class="line">mount /dev/md0 /mnt/raid0</span><br><span class="line">echo &#x27;Hello, world!&#x27; &gt; /mnt/raid0/hello</span><br><span class="line">cat /mnt/raid0/hello</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925205617811.png" alt="image-20230925205617811"></p>
+<p>4.模拟删除</p>
+<p>(1)使用fdisk删除分区：<code>fdisk /dev/sdb</code></p>
+<p>在<code>Command (m for help):</code>后面输入<code>d</code>，然后在<code>Command (m for help):</code>后面输入<code>w</code>保存</p>
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925205728900.png" alt="image-20230925205728900"></p>
+<p>(2)更新分区表并重启</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">partprobe</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925205815347.png" alt="image-20230925205815347"></p>
+<p>(3)重启后发现RAID 0阵列已损坏</p>
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925210111388.png" alt="image-20230925210111388"></p>
+<p>(4)测试读写</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /mnt/raid0/hello</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925210210451.png" alt="image-20230925210210451"></p>
+<p>数据损坏</p>
+<p>5.删除阵列，释放磁盘空间</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">umount /mnt/raid0</span><br><span class="line">mdadm -S /dev/md0</span><br><span class="line">mdadm --zero-superblock /dev/sd&#123;b1,c1&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\32685\AppData\Roaming\Typora\typora-user-images\image-20230925210551535.png" alt="image-20230925210551535"></p>
+<h4 id="四、思考题"><a href="#四、思考题" class="headerlink" title="四、思考题"></a>四、思考题</h4><h5 id="1-为什么及在什么条件下选择用-RAID"><a href="#1-为什么及在什么条件下选择用-RAID" class="headerlink" title="1.为什么及在什么条件下选择用 RAID"></a>1.为什么及在什么条件下选择用 RAID</h5><p>​	使用RAID（冗余磁盘阵列）的主要目的是提高数据存储的可靠性、容错性和性能。以下是选择使用RAID的几个常见原因：</p>
+<p>1、数据冗余和容错：通过在多个物理磁盘上创建冗余副本，RAID可以保护数据免受硬件故障和磁盘损坏的影响。如果一块磁盘故障，RAID可以自动从冗余副本中恢复数据，而不会对数据丢失。</p>
+<p>2、提高读&#x2F;写性能：某些RAID级别（例如RAID 0）可以通过将数据分布在多个磁盘上同时读写，提供更高的读取和写入性能。这对那些需要处理大量数据、需要快速读取或写入操作的应用程序非常有用。</p>
+<p>3、扩展存储容量：通过使用RAID级别如RAID 5或RAID 6，在同时提供数据冗余的基础上，可以将多个磁盘组合成一个较大的逻辑卷。这样可以扩展存储容量，使得更多的数据可以被存储在一个逻辑卷中。</p>
+<p>4、高可用性和无停机维护：RAID支持热插拔磁盘和在线重建功能，这意味着故障磁盘可以在不中断系统运行的情况下更换，并且在更换过程中可以进行数据恢复。</p>
+<h5 id="2-RAID-分布式存储-集中存储的区别"><a href="#2-RAID-分布式存储-集中存储的区别" class="headerlink" title="2.RAID &amp; 分布式存储 &amp; 集中存储的区别"></a>2.RAID &amp; 分布式存储 &amp; 集中存储的区别</h5><p>RAID、分布式存储和集中存储是三种不同的数据存储架构，它们在数据分布、可靠性、性能和管理方面有所不同。</p>
+<ol>
+<li>RAID（冗余磁盘阵列）： RAID是一种通过将多个物理磁盘组合成逻辑卷来提供数据冗余、容错和性能增益的技术。RAID可以在本地服务器上实现，并使用硬件或软件控制器进行管理。它的主要目标是提高数据的可用性和可靠性，通过数据冗余和分布，可以在单个磁盘故障时保护数据。RAID提供了不同级别（如RAID 0、RAID 1、RAID 5等），以满足不同的需求，包括冗余、性能和容量扩展。</li>
+<li>分布式存储： 分布式存储是一种数据存储架构，其中数据被分散储存在多个节点上，这些节点可以是位于同一本地网络或全球范围内的不同位置的服务器。分布式存储系统使用分布式算法来管理数据的复制、分布和访问。它可以提供高可用性、可扩展性和容错性，允许系统通过并行访问和负载均衡来提升性能。分布式存储可以通过复制、分片或散列等技术来实现数据的分布和冗余。</li>
+<li>集中存储： 集中存储是一种将数据集中存储在一个中心位置的架构，该位置可以是本地服务器、存储区域网络（SAN）或网络附加存储（NAS）设备。在集中存储中，多个客户端可以通过网络访问共享存储资源。这种架构提供了集中化的数据管理和共享，可以提高数据的一致性和可管理性。集中存储通常使用高速网络连接（如Fibre Channel或以太网）连接到客户端，并提供高带宽和低延迟的数据访问。</li>
+</ol>
+<p>总结起来，RAID是一种用于本地服务器的技术，通过磁盘冗余和性能增益来提供数据保护和提升性能；分布式存储是一种将数据分散在多个节点的存储架构，通过复制和分布来提供高可用性和可扩展性；集中存储是一种将数据集中存储在一个中心位置，通过网络共享给多个客户端的存储架构，提供集中式管理和共享访问。选择适合需求的存储架构需要考虑数据安全性、性能需求、管理复杂性和成本等因素。</p>
 
       </section>
 
       
       
         <nav class="article-nav">
+          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
@@ -180,25 +272,8 @@
     
     <div class="card-text">
       
-        <a href="/2023/09/25/wangchun/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">网络存储lab1</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
-          
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-      <div class="card-cover" background-image-lazy data-img="/img/1680583801590.png"></div>
-    
-    <div class="card-text">
-      
-        <a href="/2023/08/16/hello-world/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">Hello World</h2>
+        <a href="/2023/08/18/first-article/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">我阐释你的梦</h2>
         </a>
       
       <div class="card-text--row">Older</div>
@@ -475,7 +550,7 @@
     <span>TOC</span>
   </div>
   <div class="widget-body">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%91%E9%98%90%E9%87%8A%E4%BD%A0%E7%9A%84%E6%A2%A6"><span class="toc-number">1.</span> <span class="toc-text">我阐释你的梦</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Lab01-RAID%E9%98%B5%E5%88%97"><span class="toc-number">1.</span> <span class="toc-text">Lab01 RAID阵列</span></a></li></ol>
   </div>
 </section>
 
