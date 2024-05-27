@@ -22,7 +22,7 @@
 
   
 
-  <title>message | Morty的小站</title>
+  <title>图像处理lab2 | Morty的小站</title>
 
   
 
@@ -49,9 +49,9 @@
   <div class="root-container">
     
 <!-- header container -->
-<header class="header-container">
+<header class="header-container post">
   
-    <div class="post-image" style="background-image: url(/img/1680584594127.png)"></div>
+    <div class="post-image" style="background-image: url(/img/1680584184078.png)"></div>
   
 
   <!-- navbar -->
@@ -101,48 +101,234 @@
 
   
   
-
-  
-  
     <div class="header-content">
-      <div class="post-text layout-block layout-padding">
-        <h1 class="title-wrap">message</h1>
-        
-          <h2 class="title-sub-wrap">来留言叭</h2>
-        
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">图像处理lab2</h1>
+          <h2 class="title-sub-wrap">
+            <strong>lzf</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2024-05-27T05:44:31.000Z" itemprop="datePublished">2024-05-27</time>
+          </h2>
+          
+          
+            <h2 id="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab2/" class="title-sub-wrap leancloud_visitors" data-flag-title="图像处理lab2">
+              <em>文章访问量</em>
+              <i class="leancloud-visitors-count"></i>
+            </h2>
+          
+          <ul class="wrap-list dark">
+  
+    <li><a href="/categories/Homework/">📒 Homework</a></li>
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/CV/">🏷️ CV</a></li>
+  
+</ul>
+        </div>
       </div>
     </div>
+  
+
+  
   
   
 </header>
 
-    <!-- 分页(其他自定义页面) -->
+    <!-- 文章 -->
 
-<!-- 自定义页面 -->
-
+<!-- 文章内容 -->
 <div class="body-container">
   <article class="content-container layout-block post-container">
     <div class="article-info">
       
+      
+      
+      
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h2 id="一起畅所欲言吧"><a href="#一起畅所欲言吧" class="headerlink" title="一起畅所欲言吧"></a>一起畅所欲言吧</h2><h4 id="111111111111"><a href="#111111111111" class="headerlink" title="111111111111"></a>111111111111</h4>
-    <figure class="figure-image">
-      <img src="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg" alt="" loading="lazy" />
-      <figcaption></figcaption>
-    </figure>
-  
+        <h2 id="图像处理lab2"><a href="#图像处理lab2" class="headerlink" title="图像处理lab2"></a>图像处理lab2</h2><p>21371255 刘兆丰</p>
+<h3 id="1-Questions"><a href="#1-Questions" class="headerlink" title="1.Questions"></a>1.Questions</h3><h4 id="1-1-corner-detection"><a href="#1-1-corner-detection" class="headerlink" title="1.1 corner detection"></a>1.1 corner detection</h4><p>“corners”（角点）指的是图像中具有明显边缘或纹理变化的位置。角点通常是图像中的一些重要特征点，因为它们在不同图像之间具有较高的稳定性和可重复性。</p>
+<p>（a）使用 Harris corner detection</p>
+<p>pair 1:</p>
+<p><img src="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab2/image-20240505143423293.png" alt="image-20240505143423293.png"></p>
+<p><img src="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab2/image-20240505143534351.png" alt="image-20240505143534351.png"></p>
+<p>pair2:</p>
+<p><img src="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab2/image-20240505143600713.png" alt="image-20240505143600713.png"></p>
+<p><img src="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab2/image-20240505143622592.png" alt="image-20240505143622592.png"></p>
+<p>pair3:</p>
+<p><img src="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab2/image-20240505143718398.png" alt="image-20240505143718398.png"></p>
+<p><img src="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab2/image-20240505143751673.png" alt="image-20240505143751673.png"></p>
+<p>（b）</p>
+<p>pair1 ：第一张图检测到了雕像上的角点，但第二张图没有检测到角点，可能是因为第二张图片较为模糊的原因</p>
+<p>pair2： 两张图都检测到了建筑上的角点，但是第二张图相比第一张图，多检测了底下人身上的角点，说明周围环境会影响角点的检测</p>
+<p>pair3： 第一张图检测的是鞋子上的角点，第二张图检测的是旁边的椅子的腿，可能是因为图中突出部位的不同导致了检测角点的不同</p>
+<p>图像特征匹配的挑战：</p>
+<p>视点变化：当图像从不同的视角或观察点捕获时，特征点的外观和位置可能发生变化。这导致了特征点在不同图像之间的不精确匹配。</p>
+<p>光照变化：光照条件的变化会导致图像中的亮度、对比度和颜色发生变化。这会影响特征点的外观，使得在不同光照条件下进行特征匹配变得困难。</p>
+<p>遮挡：图像中的物体遮挡可能导致一些特征点无法在不同图像中被观察到。这会导致匹配算法无法找到正确的对应关系。</p>
+<p>尺度变化：当物体在图像中发生尺度变化时，特征点的大小和分布也会发生变化。这对于尺度不变的特征描述子来说是一个挑战，因为它们需要在不同尺度之间进行匹配。</p>
+<p>噪声和图像失真：图像中的噪声、模糊或压缩失真会导致特征点的检测和描述变得困难。这可能会导致特征匹配的错误或不准确。</p>
+<p>重复纹理：当图像中存在大量重复纹理时，特征点的选择和匹配变得困难。重复纹理可能导致特征点之间的混淆和模糊。</p>
+<h4 id="1-2-Distance-metrics-for-feature-matching"><a href="#1-2-Distance-metrics-for-feature-matching" class="headerlink" title="1.2  Distance metrics for feature matching"></a>1.2  Distance metrics for feature matching</h4><p>特征匹配中的距离度量（distance metrics）是用于衡量特征描述子之间的相似性或差异性的方法。在特征匹配过程中，通过计算描述子之间的距离，可以确定最佳匹配的特征点对。</p>
+<p>（a）</p>
+<p>欧氏距离（Euclidean Distance）：欧氏距离是最简单和常用的距离度量方法。对于两个特征描述子向量x和y，欧氏距离可以通过计算它们之间的欧氏距离来衡量：</p>
+<p>d(x, y) &#x3D; sqrt(sum((x[i] - y[i])^2))，其中i表示向量的维度。</p>
+<p>余弦相似度（Cosine Similarity）：余弦相似度是一种衡量向量相似性的度量方法。对于两个特征描述子向量x和y，余弦相似度可以通过计算它们之间的夹角余弦来衡量：</p>
+<p>similarity(x, y) &#x3D; (x·y) &#x2F; (||x|| * ||y||)，其中·表示向量的点积，||x||和||y||表示向量的范数。</p>
+<p>根据这些几何解释，我们可以了解到何时使用每种度量方法：</p>
+<p>欧氏距离适用于考虑向量大小和方向的情况。当特征描述子的绝对值和相对位置对于任务很重要时，欧氏距离是一个合适的选择。例如，在图像处理中，当我们关注特征点的位置和形状时，欧氏距离可以用于匹配和跟踪特征点。</p>
+<p>余弦相似度适用于只考虑向量方向的情况。当特征描述子的绝对值不重要，而我们关注特征之间的方向性和趋势时，余弦相似度是一个合适的选择。例如，在文本分类中，我们可以使用余弦相似度来计算文档之间的相似性，而不考虑文档的长度或词频。</p>
+<p>（b）</p>
+<p>好的特征描述子匹配方法应具备以下特点：</p>
+<p>鲁棒性（Robustness）：好的方法应对图像变化、噪声和遮挡等因素具有鲁棒性。它应能够识别出相似的特征，即使在图像中存在略微的变化或干扰。</p>
+<p>精确性（Accuracy）：好的方法应能够准确地匹配相应的特征描述子，以确保匹配结果的准确性。它应该能够准确地区分出最佳匹配和误匹配。</p>
+<p>效率（Efficiency）：好的方法应具备高效的计算性能，特别是在大规模数据集和实时应用中。它应该能够在合理的时间内完成匹配任务，以满足实际应用的要求。</p>
+<p>可扩展性（Scalability）：好的方法应具备可扩展性，能够应对不同规模和复杂度的数据集。它应该能够处理大量的特征描述子，并能够在不同场景和数据集上进行泛化。</p>
+<p>适应性（Adaptability）：好的方法应具备适应不同类型和特征描述子的能力。它应该能够处理不同种类的特征描述子，如局部特征、全局特征或深度学习特征。</p>
+<p>非刚性匹配（Non-rigid Matching）：好的方法应具备处理非刚性形变的能力，例如目标变形、姿态变化或形状扭曲等。它应能够捕捉到非刚性变换下的相似性。</p>
+<h4 id="1-3-homography"><a href="#1-3-homography" class="headerlink" title="1.3 homography"></a>1.3 homography</h4><p>（a)首先，将点y &#x3D; λn + x表示为齐次坐标形式，即[Y, W] &#x3D; [λa + u, λb + v, λ]。</p>
+<p>然后，通过矩阵乘法运算，将新的点y’表示为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[Y&#x27;, W&#x27;] = H * [Y, W] </span><br><span class="line">= [h11(λa + u) + h12(λb + v) + h13λ]</span><br><span class="line">  [h21(λa + u) + h22(λb + v) + h23λ]</span><br><span class="line">  [h31(λa + u) + h32(λb + v) + h33λ]</span><br><span class="line"></span><br><span class="line">= [h11λa + h12λb + h13λ + h11u + h12v]</span><br><span class="line">  [h21λa + h22λb + h23λ + h21u + h22v]</span><br><span class="line">  [h31λa + h32λb + h33λ + h31u + h32v]</span><br></pre></td></tr></table></figure>
 
-<div class="aplayer-box" data-url='https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.mp3' data-name='アイロニ' data-artist='鹿乃' data-cover='https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.jpg' data-lrc='https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.lrc' data-lrcType='3' ></div>
+<p>将新的点y’转换回笛卡尔坐标形式，得到线ℓ’：</p>
+<p>$(\frac{h11λa + h12λb + h13λ + h11u + h12v}{h31λa + h32λb + h33λ + h31u + h32v},\frac{h21λa + h22λb + h23λ + h21u + h22v}{h31λa + h32λb + h33λ + h31u + h32v})$</p>
+<p>(b) 要计算消失点y’v，可以考虑当λ → ∞ 时的点[Y’, W’]的极限。</p>
+<p>当$h31a + h32b + h33!&#x3D;0$ 且 </p>
+<p>$h31a + h32b + h33!&#x3D;0$ 时，收敛到一个消失点</p>
+<p>$y^{,}_v $&#x3D; lim(λ→∞) ℓ’ &#x3D; $(\frac{h11a + h12b + h13 }{h31a + h32b + h33},\frac{h21a + h22b + h23}{h31a + h32b + h33})$</p>
+<p>（c） 当$h31a + h32b + h33&#x3D;0$ 或</p>
+<p>$h31a + h32b + h33&#x3D;0$ 时，不会收敛到一个消失点</p>
+<h3 id="2-Programming"><a href="#2-Programming" class="headerlink" title="2.Programming"></a>2.Programming</h3><h4 id="1-代码"><a href="#1-代码" class="headerlink" title="1. 代码"></a>1. 代码</h4><h5 id="1-get-interest-points"><a href="#1-get-interest-points" class="headerlink" title="1.get_interest_points()"></a>1.get_interest_points()</h5><ol>
+<li><strong>计算梯度</strong>：使用Sobel算子计算图像的水平和垂直梯度，分别保存在grad_x和grad_y中。</li>
+<li><strong>平滑梯度</strong>：对计算得到的梯度图像进行高斯平滑以减少噪声。</li>
+<li><strong>计算结构张量</strong>：利用平滑后的梯度计算结构张量的各个分量（Ixx、Iyy、Ixy）。</li>
+<li><strong>计算Harris响应</strong>：使用结构张量计算Harris响应函数，即通过对结构张量进行运算得到每个像素点的Harris响应值。这里使用了一个窗口（kernel）来计算每个像素点的Harris响应。</li>
+<li><strong>非极大值抑制</strong>：在Harris响应图上执行非极大值抑制，以便仅保留局部最大的响应值，以确定兴趣点的位置。</li>
+<li><strong>边界过滤</strong>：滤除位于图像边界附近的兴趣点，因为边界附近的响应值可能受限于窗口的大小，不够准确。</li>
+</ol>
+<p>最后，返回有效的兴趣点的坐标（xs和ys），这些坐标是经过非极大值抑制和边界过滤后剩余的兴趣点的位置。</p>
+<p>代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">get_interest_points</span>(<span class="params">image, feature_width</span>):</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Step 1: Compute gradients</span></span><br><span class="line">    grad_x = sobel_h(image)</span><br><span class="line">    grad_y = sobel_v(image)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Step 2: Smooth gradients to reduce noise</span></span><br><span class="line">    grad_x_smooth = gaussian(grad_x, sigma=<span class="number">1</span>)</span><br><span class="line">    grad_y_smooth = gaussian(grad_y, sigma=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Step 3: Compute the structure tensor</span></span><br><span class="line">    Ixx = grad_x_smooth ** <span class="number">2</span></span><br><span class="line">    Iyy = grad_y_smooth ** <span class="number">2</span></span><br><span class="line">    Ixy = grad_x_smooth * grad_y_smooth</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Step 4: Compute the Harris response</span></span><br><span class="line">    kernel = np.ones((feature_width, feature_width))</span><br><span class="line">    Sxx = convolve(Ixx, kernel)</span><br><span class="line">    Syy = convolve(Iyy, kernel)</span><br><span class="line">    Sxy = convolve(Ixy, kernel)</span><br><span class="line"></span><br><span class="line">    det = Sxx * Syy - Sxy ** <span class="number">2</span></span><br><span class="line">    trace = Sxx + Syy</span><br><span class="line">    harris_response = det - <span class="number">0.04</span> * trace ** <span class="number">2</span>  <span class="comment"># 0.05 is an empirical constant</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Step 5: Apply non-maximum suppression</span></span><br><span class="line">    corners = peak_local_max(harris_response, min_distance=feature_width, threshold_rel=<span class="number">0.01</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Step 6: Filter out points near the image boundaries</span></span><br><span class="line">    valid_corners = []</span><br><span class="line">    height, width = image.shape</span><br><span class="line">    <span class="keyword">for</span> corner <span class="keyword">in</span> corners:</span><br><span class="line">        y, x = corner</span><br><span class="line">        <span class="keyword">if</span> feature_width &lt;= x &lt; width - feature_width <span class="keyword">and</span> feature_width &lt;= y &lt; height - feature_width:</span><br><span class="line">            valid_corners.append(corner)</span><br><span class="line"></span><br><span class="line">    xs = np.array([corner[<span class="number">1</span>] <span class="keyword">for</span> corner <span class="keyword">in</span> valid_corners])</span><br><span class="line">    ys = np.array([corner[<span class="number">0</span>] <span class="keyword">for</span> corner <span class="keyword">in</span> valid_corners])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> xs, ys</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h5 id="2-get-features"><a href="#2-get-features" class="headerlink" title="2. get_features()"></a>2. get_features()</h5><ol>
+<li><strong>基于灰度图像的方法（注释部分）</strong>：<ul>
+<li>首先，对于每个兴趣点，提取其周围的图像块（patch）。</li>
+<li>将提取的图像块进行归一化处理，将像素值范围映射到0到1之间。</li>
+<li>将归一化的图像块展平为一维数组，作为特征描述符。</li>
+<li>所有特征描述符存储在一个列表中，并最终转换为NumPy数组。</li>
+</ul>
+</li>
+<li><strong>基于SIFT的方法</strong>：<ul>
+<li>对于每个兴趣点，提取其周围的图像块。</li>
+<li>将图像块分割为4x4个单元格（cells）。</li>
+<li>对于每个单元格，计算其梯度和方向。</li>
+<li>将每个单元格的梯度方向分成8个方向的直方图（每个方向45度），并根据梯度幅值加权。</li>
+<li>将所有单元格的直方图连接成一个特征向量。</li>
+<li>对特征向量进行归一化，使其具有单位范数。</li>
+<li>所有特征向量存储在一个列表中，并最终转换为NumPy数组。</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">get_features</span>(<span class="params">image, x, y, feature_width</span>):</span><br><span class="line"></span><br><span class="line">    <span class="comment">#normalized patches</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># # 存储所有特征描述符的列表</span></span><br><span class="line">    <span class="comment"># all_descriptors = []</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment"># # 遍历每个兴趣点的坐标</span></span><br><span class="line">    <span class="comment"># for i in range(len(x)):</span></span><br><span class="line">    <span class="comment">#     # 获取当前兴趣点的坐标</span></span><br><span class="line">    <span class="comment">#     point_x = x[i]</span></span><br><span class="line">    <span class="comment">#     point_y = y[i]</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment">#     # 提取当前兴趣点周围的图像块</span></span><br><span class="line">    <span class="comment">#     patch = image[int(point_y) - feature_width // 2: int(point_y) + feature_width // 2,</span></span><br><span class="line">    <span class="comment">#             int(point_x) - feature_width // 2: int(point_x) + feature_width // 2]</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment">#     # 将图像块归一化为0到1的范围</span></span><br><span class="line">    <span class="comment">#     normalized_patch = patch.astype(float) / 255.0</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment">#     # 将归一化的图像块展平为一维数组</span></span><br><span class="line">    <span class="comment">#     flattened_patch = normalized_patch.flatten()</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment">#     # 将展平后的图像块作为特征描述符</span></span><br><span class="line">    <span class="comment">#     all_descriptors.append(flattened_patch)</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment"># # 将特征描述符转换为 numpy 数组</span></span><br><span class="line">    <span class="comment"># features = np.array(all_descriptors)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># SIFT -------</span></span><br><span class="line"></span><br><span class="line">    features = []</span><br><span class="line">    num_bins = <span class="number">8</span></span><br><span class="line">    cell_width = feature_width // <span class="number">4</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Gaussian smoothing to reduce noise</span></span><br><span class="line">    smoothed_image = gaussian(image, sigma=<span class="number">1</span>, mode=<span class="string">&#x27;reflect&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Iterate over interest points</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(x)):</span><br><span class="line">        <span class="comment"># Extract patch around interest point</span></span><br><span class="line">        patch = smoothed_image[<span class="built_in">int</span>(y[i] - feature_width / <span class="number">2</span>):<span class="built_in">int</span>(y[i] + feature_width / <span class="number">2</span>),</span><br><span class="line">                <span class="built_in">int</span>(x[i] - feature_width / <span class="number">2</span>):<span class="built_in">int</span>(x[i] + feature_width / <span class="number">2</span>)]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Divide patch into 4x4 cells</span></span><br><span class="line">        cells = np.split(patch, <span class="number">4</span>, axis=<span class="number">0</span>)</span><br><span class="line">        cells = [np.split(cell, <span class="number">4</span>, axis=<span class="number">1</span>) <span class="keyword">for</span> cell <span class="keyword">in</span> cells]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Compute gradients and orientations for each cell</span></span><br><span class="line">        cell_gradients = []</span><br><span class="line">        <span class="keyword">for</span> row <span class="keyword">in</span> cells:</span><br><span class="line">            <span class="keyword">for</span> cell <span class="keyword">in</span> row:</span><br><span class="line">                <span class="comment"># Compute gradients using Sobel filters</span></span><br><span class="line">                gradient_x = np.gradient(cell)[<span class="number">1</span>]</span><br><span class="line">                gradient_y = np.gradient(cell)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">                <span class="comment"># Compute gradient magnitude and orientation</span></span><br><span class="line">                gradient_magnitude = np.sqrt(gradient_x ** <span class="number">2</span> + gradient_y ** <span class="number">2</span>)</span><br><span class="line">                gradient_orientation = np.arctan2(gradient_y, gradient_x)</span><br><span class="line"></span><br><span class="line">                <span class="comment"># Bin orientations into histogram</span></span><br><span class="line">                histogram, _ = np.histogram(gradient_orientation, bins=num_bins, <span class="built_in">range</span>=(-np.pi, np.pi),</span><br><span class="line">                                            weights=gradient_magnitude)</span><br><span class="line">                cell_gradients.append(histogram)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Concatenate histograms to form feature vector</span></span><br><span class="line">        feature_vector = np.concatenate(cell_gradients)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Normalize feature vector</span></span><br><span class="line">        feature_vector /= np.linalg.norm(feature_vector)</span><br><span class="line"></span><br><span class="line">        features.append(feature_vector)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    features = np.array(features)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> features</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h5 id="3-match-features"><a href="#3-match-features" class="headerlink" title="3. match_features()"></a>3. match_features()</h5><ol>
+<li><strong>计算特征间距离</strong>：<ul>
+<li>使用numpy的linalg.norm函数计算两组特征描述符之间的欧氏距离。这会生成一个矩阵，其中每个元素表示第一幅图像中一个特征与第二幅图像中所有特征之间的距离。</li>
+</ul>
+</li>
+<li><strong>找到最佳匹配</strong>：<ul>
+<li>对于第一幅图像中的每个特征，找到与之距离最近的特征在第二幅图像中的索引（即最佳匹配）。</li>
+<li>找到第二幅图像中每个特征的次优匹配。</li>
+</ul>
+</li>
+<li><strong>应用最近邻距离比（NNDR）测试</strong>：<ul>
+<li>计算最佳匹配与次优匹配之间的距离比率。</li>
+<li>根据设定的阈值（这里是0.8），判断最佳匹配是否“好”的。如果最佳匹配的距离比率小于0.8，则认为这是一个好的匹配。</li>
+</ul>
+</li>
+<li><strong>生成匹配结果</strong>：<ul>
+<li>将所有“好”的匹配结果保存在一个数组中，其中每一对匹配是一行，包含第一幅图像中的特征索引和第二幅图像中的特征索引。</li>
+<li>生成与匹配相对应的置信度值，这里用1减去距离比率。</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">match_features</span>(<span class="params">im1_features, im2_features</span>):</span><br><span class="line">    <span class="comment"># matrix ----------------------------------</span></span><br><span class="line">    matches = []</span><br><span class="line">    confidences = []</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Calculate distances between all pairs of feature descriptors</span></span><br><span class="line">    distances = np.linalg.norm(im1_features[:, np.newaxis, :] - im2_features, axis=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Find the best and second best matches for each feature in im1</span></span><br><span class="line">    best_match_indices = np.argmin(distances, axis=<span class="number">1</span>)</span><br><span class="line">    best_match_distances = distances[np.arange(<span class="built_in">len</span>(im1_features)), best_match_indices]</span><br><span class="line">    distances[np.arange(<span class="built_in">len</span>(im1_features)), best_match_indices] = np.inf</span><br><span class="line">    second_best_match_distances = np.<span class="built_in">min</span>(distances, axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Apply NNDR test</span></span><br><span class="line">    ratio = best_match_distances / second_best_match_distances</span><br><span class="line">    good_matches = ratio &lt; <span class="number">0.8</span></span><br><span class="line">    matches = np.column_stack((np.nonzero(good_matches)[<span class="number">0</span>], best_match_indices[good_matches]))</span><br><span class="line">    confidences = <span class="number">1</span> - ratio[good_matches]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> matches, confidences</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h4 id="2-SIFT-对比normalized-patches的提升"><a href="#2-SIFT-对比normalized-patches的提升" class="headerlink" title="2. SIFT 对比normalized patches的提升"></a>2. SIFT 对比normalized patches的提升</h4><p>对于mt_rushmore，</p>
+<p>使用normalized patches：</p>
+<p><img src="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab2/image-20240505215216893.png" alt="image-20240505215216893.png"></p>
+<p><img src="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab2/image-20240505215207809.png" alt="image-20240505215207809.png"></p>
+<p>使用SIFT：</p>
+<p><img src="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab2/image-20240505215103631.png" alt="image-20240505215103631.png"></p>
+<p><img src="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab2/image-20240505215049894.png" alt="image-20240505215049894.png"></p>
+<p>使用SIFT之后，识别的准确率从 55%上升到了80%</p>
+<h4 id="3-结果"><a href="#3-结果" class="headerlink" title="3.结果"></a>3.结果</h4><h5 id="1-notre-dame"><a href="#1-notre-dame" class="headerlink" title="1.notre_dame"></a>1.notre_dame</h5><p><img src="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab2/image-20240505215617683.png" alt="image-20240505215617683.png"></p>
+<h5 id="2-mt-rushmore"><a href="#2-mt-rushmore" class="headerlink" title="2.mt_rushmore"></a>2.mt_rushmore</h5><p><img src="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab2/mt_rushmore_matches.jpg" alt="mt_rushmore_matches.jpg"></p>
+<p><img src="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab2/image-20240505215553314.png" alt="image-20240505215553314.png"></p>
+<h5 id="3-e-gaudi"><a href="#3-e-gaudi" class="headerlink" title="3.e_gaudi"></a>3.e_gaudi</h5><p><img src="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab2/e_gaudi_matches.jpg" alt="e_gaudi_matches.jpg"></p>
 
       </section>
 
       
       
-
-      
-      
-        <section class="page-message-container layout-padding">
+        <nav class="article-nav">
           
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+      <div class="card-cover" background-image-lazy data-img="/img/1680584184078.png"></div>
+    
+    <div class="card-text">
+      
+        <a href="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab1/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">图像处理lab1</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+      <div class="card-cover" background-image-lazy data-img="/img/1680584184078.png"></div>
+    
+    <div class="card-text">
+      
+        <a href="/2023/09/25/wangchun1/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">网络存储lab1</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
+
+      <section class="page-message-container layout-padding">
+        
 
 
   
@@ -360,8 +546,7 @@
   
 
 
-        </section>
-      
+      </section>
     </div>
     <div class="widget-info">
       <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -398,6 +583,20 @@
     </div>
   </div>
 </section>
+
+      
+<section class="widget-toc widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-toc" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M134.50666666 767.46666668H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.23999999v50.13333333c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H134.50666666c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.13333333c0.10666668-27.73333333 22.50666668-50.24000001 50.24000001-50.24000001zM84.37333332 541.65333333h326.18666669c27.73333333 0 50.24000001 22.39999999 50.23999999 50.13333334v50.24000001c0 27.73333333-22.50666668 50.24000001-50.24000002 50.23999999H84.37333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.23999999v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333334zM134.50666666 315.83999999H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.24000001v50.24000001c0 27.73333333-22.50666668 50.13333334-50.24000001 50.13333333H134.50666666c-27.73333333 0-50.24000001-22.39999999-50.23999999-50.13333333v-50.24000001c0.10666668-27.84000001 22.50666668-50.24000001 50.24000001-50.23999999zM209.81333332 89.91999999h326.18666671c27.73333333 0 50.24000001 22.39999999 50.23999997 50.13333335v50.23999999c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H209.81333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333333zM692.05333333 623.36l274.66666669 176.00000002c23.36000001 14.93333333 30.08 45.97333334 15.14666666 69.33333332L954.77333334 910.93333333c-14.93333333 23.25333334-45.97333334 30.08-69.33333335 15.14666667l-274.66666666-176c-23.36000001-14.93333333-30.08-45.97333334-15.14666667-69.33333333l27.09333334-42.24000001c14.93333333-23.36000001 46.08000001-30.08 69.33333333-15.14666666z" fill="currentColor"></path>
+</svg>
+    <span>TOC</span>
+  </div>
+  <div class="widget-body">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab2"><span class="toc-number">1.</span> <span class="toc-text">图像处理lab2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Questions"><span class="toc-number">1.1.</span> <span class="toc-text">1.Questions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Programming"><span class="toc-number">1.2.</span> <span class="toc-text">2.Programming</span></a></li></ol></li></ol>
+  </div>
+</section>
+
 
       
 <section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -455,7 +654,6 @@
     </div>
   </article>
 </div>
-
 
     <!-- footer container -->
 <footer id="footer" class="footer">

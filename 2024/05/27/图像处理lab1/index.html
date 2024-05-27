@@ -22,7 +22,7 @@
 
   
 
-  <title>message | Morty的小站</title>
+  <title>图像处理lab1 | Morty的小站</title>
 
   
 
@@ -49,9 +49,9 @@
   <div class="root-container">
     
 <!-- header container -->
-<header class="header-container">
+<header class="header-container post">
   
-    <div class="post-image" style="background-image: url(/img/1680584594127.png)"></div>
+    <div class="post-image" style="background-image: url(/img/1680584184078.png)"></div>
   
 
   <!-- navbar -->
@@ -101,48 +101,157 @@
 
   
   
-
-  
-  
     <div class="header-content">
-      <div class="post-text layout-block layout-padding">
-        <h1 class="title-wrap">message</h1>
-        
-          <h2 class="title-sub-wrap">来留言叭</h2>
-        
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">图像处理lab1</h1>
+          <h2 class="title-sub-wrap">
+            <strong>lzf</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2024-05-27T05:44:31.000Z" itemprop="datePublished">2024-05-27</time>
+          </h2>
+          
+          
+            <h2 id="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab1/" class="title-sub-wrap leancloud_visitors" data-flag-title="图像处理lab1">
+              <em>文章访问量</em>
+              <i class="leancloud-visitors-count"></i>
+            </h2>
+          
+          <ul class="wrap-list dark">
+  
+    <li><a href="/categories/Homework/">📒 Homework</a></li>
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/CV/">🏷️ CV</a></li>
+  
+</ul>
+        </div>
       </div>
     </div>
+  
+
+  
   
   
 </header>
 
-    <!-- 分页(其他自定义页面) -->
+    <!-- 文章 -->
 
-<!-- 自定义页面 -->
-
+<!-- 文章内容 -->
 <div class="body-container">
   <article class="content-container layout-block post-container">
     <div class="article-info">
       
+      
+      
+      
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h2 id="一起畅所欲言吧"><a href="#一起畅所欲言吧" class="headerlink" title="一起畅所欲言吧"></a>一起畅所欲言吧</h2><h4 id="111111111111"><a href="#111111111111" class="headerlink" title="111111111111"></a>111111111111</h4>
-    <figure class="figure-image">
-      <img src="https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg" alt="" loading="lazy" />
-      <figcaption></figcaption>
-    </figure>
-  
+        <h2 id="图像处理lab1"><a href="#图像处理lab1" class="headerlink" title="图像处理lab1"></a>图像处理lab1</h2><p>21371255 刘兆丰</p>
+<h4 id="1-Questions"><a href="#1-Questions" class="headerlink" title="1.Questions"></a>1.Questions</h4><h5 id="1-1-Convolution"><a href="#1-1-Convolution" class="headerlink" title="1.1 Convolution"></a>1.1 Convolution</h5><p>（1）</p>
+<p>卷积的三个主要组成部分如下：<br>(i) 输入：卷积操作的输入是一个图像和一个称为卷积核或滤波器的小矩阵。图像通常表示为二维矩阵，每个元素表示一个像素的灰度值。<br>(ii) 变换（发生方式）：卷积操作是通过将卷积核与输入图像的每个位置进行元素乘法，并将乘积的总和作为输出的相应位置的像素值来实现的。卷积核通过在图像上滑动并与每个位置的像素进行乘法，以生成输出图像。<br>(iii) 输出：卷积操作的输出是一个新的图像，其中每个位置的像素值表示通过卷积操作从输入图像中提取的特征。</p>
+<p>（2）</p>
+<p>卷积操作与相关性操作的不同之处在于卷积操作使用卷积核的旋转180度的版本进行计算，而相关性操作则直接使用原始卷积核进行计算。卷积是线性位移不变的，意味着如果输入图像进行平移，输出图像也会相应平移。而相关性不具有这种性质，即相关性对输入图像的平移不具有等效性。</p>
+<p>（3）</p>
+<p>为了构建一个在卷积和相关性操作之间产生不同输出的情景，我们可以选择一个非对称的卷积核。例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">kernel = [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>],</span><br><span class="line">          [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">          [-<span class="number">1</span>, -<span class="number">2</span>, -<span class="number">1</span>]]</span><br></pre></td></tr></table></figure>
 
-<div class="aplayer-box" data-url='https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.mp3' data-name='アイロニ' data-artist='鹿乃' data-cover='https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.jpg' data-lrc='https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.lrc' data-lrcType='3' ></div>
+<p>在卷积操作和相关性操作中，使用相同的输入图像和卷积核进行计算，然后比较它们的输出。以下为python代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> scipy.ndimage <span class="keyword">import</span> convolve, correlate</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> matplotlib.image <span class="keyword">as</span> mpimg</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义卷积核</span></span><br><span class="line">kernel = np.array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>],</span><br><span class="line">                   [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">                   [-<span class="number">1</span>, -<span class="number">2</span>, -<span class="number">1</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义输入图像</span></span><br><span class="line"><span class="comment"># image = np.array([[0, 0, 0, 0, 0],</span></span><br><span class="line"><span class="comment">#                   [0, 0, 0, 0, 0],</span></span><br><span class="line"><span class="comment">#                   [0, 255, 255, 255, 0],</span></span><br><span class="line"><span class="comment">#                   [0, 0, 0, 0, 0],</span></span><br><span class="line"><span class="comment">#                   [0, 0, 0, 0, 0]])</span></span><br><span class="line">image_path = <span class="string">&#x27;saul_goodman.png&#x27;</span>  <span class="comment"># 替换为您自己图像的路径</span></span><br><span class="line">image = mpimg.imread(image_path)</span><br><span class="line"><span class="built_in">print</span>(image.shape)  <span class="comment">#shape：  高x长 通道数</span></span><br><span class="line"></span><br><span class="line">num_channels = image.shape[<span class="number">2</span>]</span><br><span class="line">kernel = np.tile(kernel[:, :, np.newaxis], (<span class="number">1</span>, <span class="number">1</span>, num_channels))</span><br><span class="line"><span class="comment">#我们使用np.tile函数对卷积核进行复制。第一个参数是要复制的数组，</span></span><br><span class="line"><span class="comment"># 即卷积核。第二个参数是一个元组，指定每个维度上的复制次数。</span></span><br><span class="line"><span class="comment"># 在这里，我们将卷积核在第一个维度和第二个维度上复制1次，而在第三个维度上复制num_channels次。</span></span><br><span class="line"><span class="comment"># 这样，我们的卷积核将在通道维度上进行复制以适应输入图像的通道数。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行卷积操作</span></span><br><span class="line">convolved_image = convolve(image, kernel)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行相关性操作</span></span><br><span class="line">correlated_image = correlate(image, kernel)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示输入图像</span></span><br><span class="line">plt.figure()</span><br><span class="line">plt.imshow(image)</span><br><span class="line">plt.title(<span class="string">&#x27;Input Image&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示卷积操作的输出图像</span></span><br><span class="line">plt.figure()</span><br><span class="line">plt.imshow(convolved_image)</span><br><span class="line">plt.title(<span class="string">&#x27;Convolved Image&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示相关性操作的输出图像</span></span><br><span class="line">plt.figure()</span><br><span class="line">plt.imshow(correlated_image)</span><br><span class="line">plt.title(<span class="string">&#x27;Correlated Image&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示图像</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p>以下为代码执行结果：</p>
+<p>（a）输入图像：</p>
+<p><img src="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab1/image-20240406123249928.png" alt="image-20240406123249928.png"></p>
+<p>（b）卷积后图像：</p>
+<p><img src="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab1/image-20240406123259511.png" alt="image-20240406123259511.png"></p>
+<p>（c）相关性后图像：</p>
+<p><img src="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab1/image-20240406123309467.png" alt="image-20240406123309467.png"></p>
+<h5 id="1-2-questions"><a href="#1-2-questions" class="headerlink" title="1.2 questions"></a>1.2 questions</h5><p>高通滤波器（High Pass Filter）和低通滤波器（Low Pass Filter）是两种常见的图像滤波器，它们在图像处理和信号处理中具有不同的作用和效果。</p>
+<p>（1）高通滤波器（High Pass Filter）：</p>
+<p>高通滤波器允许高频信息通过，削弱或滤除低频信息。<br>它对图像中的边缘、细节和纹理等高频部分更为敏感，可以增强图像的边缘和细节。<br>高通滤波器通常用于图像增强、边缘检测和特征提取等应用。<br>在频域上，高通滤波器会保留图像的高频分量，而减弱或抑制低频分量。<br>（2）低通滤波器（Low Pass Filter）：</p>
+<p>低通滤波器允许低频信息通过，削弱或滤除高频信息。<br>它对图像中的平滑区域和慢变化部分更为敏感，可以平滑图像并减少噪声。<br>低通滤波器通常用于图像平滑、去噪和模糊化等应用。<br>在频域上，低通滤波器会保留图像的低频分量，而减弱或抑制高频分量。</p>
+<p>(a) A</p>
+<p>(b)B</p>
+<p>(c)C</p>
+<p>(d)B</p>
+<p>(e)A</p>
+<h3 id="2-Programming"><a href="#2-Programming" class="headerlink" title="2.Programming"></a>2.Programming</h3><h4 id="2-1-Template-Matching-with-Cross-correlation"><a href="#2-1-Template-Matching-with-Cross-correlation" class="headerlink" title="2.1 Template Matching with Cross-correlation"></a>2.1 Template Matching with Cross-correlation</h4><h5 id="2-1-1-cross-correlation"><a href="#2-1-1-cross-correlation" class="headerlink" title="2.1.1 cross-correlation"></a>2.1.1 cross-correlation</h5><p>结果：</p>
+<p><img src="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab1/image-20240406183037825.png" alt="image-20240406183037825.png"></p>
+<p>使用原生的template，识别准确率会降低</p>
+<h5 id="2-1-2-zero-mean-cross-correlation"><a href="#2-1-2-zero-mean-cross-correlation" class="headerlink" title="2.1.2 zero-mean cross-correlation"></a>2.1.2 zero-mean cross-correlation</h5><p>结果：</p>
+<p><img src="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab1/image-20240406183009566.png" alt="image-20240406183009566.png"></p>
+<p>check_product_on_shelf():</p>
+<p><img src="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab1/image-20240406175155563.png" alt="image-20240406175155563.png"></p>
+<h5 id="2-1-3-Normalized-cross-correlation"><a href="#2-1-3-Normalized-cross-correlation" class="headerlink" title="2.1.3 Normalized cross-correlation"></a>2.1.3 Normalized cross-correlation</h5><p>change_in_lighting_condition():</p>
+<p><img src="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab1/image-20240406183143020.png" alt="image-20240406183143020.png"></p>
+<p>final_normalized_cross_correlation():</p>
+<p><img src="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab1/image-20240406183256083.png" alt="image-20240406183256083.png"></p>
+<h4 id="2-2-Hybrid-images"><a href="#2-2-Hybrid-images" class="headerlink" title="2.2 Hybrid images"></a>2.2 Hybrid images</h4><p>report</p>
+<h5 id="1-my-filter"><a href="#1-my-filter" class="headerlink" title="(1) my_filter:"></a>(1) my_filter:</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">my_imfilter</span>(<span class="params">image, kernel</span>):</span><br><span class="line">    filtered_image = np.zeros(image.shape)</span><br><span class="line"></span><br><span class="line">    Hi, Wi, Di = image.shape</span><br><span class="line">    Hk, Wk = kernel.shape</span><br><span class="line"></span><br><span class="line">    <span class="comment"># raise error for even dimension</span></span><br><span class="line">    <span class="keyword">for</span> dim <span class="keyword">in</span> kernel.shape:</span><br><span class="line">        <span class="keyword">if</span> dim % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">raise</span> ValueError(<span class="string">&quot;Kernel dimension must be odd!&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算 padding 的大小</span></span><br><span class="line">    pad_h = Hk // <span class="number">2</span></span><br><span class="line">    pad_w = Wk // <span class="number">2</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 对输入图像进行边缘填充</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(image.shape)==<span class="number">2</span>:</span><br><span class="line">        padded_image = np.pad(image, ((pad_h, pad_h), (pad_w, pad_w)), mode=<span class="string">&#x27;constant&#x27;</span>)</span><br><span class="line">    <span class="keyword">elif</span> <span class="built_in">len</span>(image.shape)==<span class="number">3</span>:</span><br><span class="line">        padded_image = np.pad(image, ((pad_h, pad_h), (pad_w, pad_w),(<span class="number">0</span>,<span class="number">0</span>)), mode=<span class="string">&#x27;constant&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># color or grayscale</span></span><br><span class="line">    <span class="comment"># if len(image.shape) == 3:</span></span><br><span class="line">    <span class="comment">#     num_channels = image.shape[2]</span></span><br><span class="line">    <span class="comment">#     kernel = np.tile(kernel[:, :, np.newaxis], (1, 1, num_channels))</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 翻转kernel</span></span><br><span class="line">    flipped_kernel = np.flip(kernel)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 遍历图像的每个像素</span></span><br><span class="line">    <span class="keyword">if</span> Di:</span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(Di):</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(Hi):</span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(Wi):</span><br><span class="line">                    <span class="comment"># 提取当前像素的邻域 ---- 用于卷积相乘</span></span><br><span class="line">                    neighborhood = padded_image[i:i + Hk, j:j + Wk, k]</span><br><span class="line"></span><br><span class="line">                    <span class="comment"># 计算加权邻域和</span></span><br><span class="line">                    weighted_sum = np.<span class="built_in">sum</span>(neighborhood * flipped_kernel)</span><br><span class="line"></span><br><span class="line">                    <span class="comment"># 将计算结果赋值给输出图像的对应位置</span></span><br><span class="line">                    filtered_image[i, j, k] = weighted_sum</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(Hi):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(Wi):</span><br><span class="line">                <span class="comment"># 提取当前像素的邻域 ---- 用于卷积相乘</span></span><br><span class="line">                neighborhood = padded_image[i:i + Hk, j:j + Wk]</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 计算加权邻域和</span></span><br><span class="line">                weighted_sum = np.<span class="built_in">sum</span>(neighborhood * kernel)</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 将计算结果赋值给输出图像的对应位置</span></span><br><span class="line">                filtered_image[i, j] = weighted_sum</span><br><span class="line"></span><br><span class="line">    filtered_image = np.clip(filtered_image, -<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> filtered_image</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<p><img src="C:\Users\32685\Desktop\2024_homework_set_1\results\identity_image.jpg" alt="identity_image"></p>
+<p><img src="C:\Users\32685\Desktop\2024_homework_set_1\results\blur_image.jpg" alt="blur_image"></p>
+<p><img src="C:\Users\32685\Desktop\2024_homework_set_1\results\large_blur_image.jpg" alt="large_blur_image"></p>
+<p><img src="C:\Users\32685\Desktop\2024_homework_set_1\results\laplacian_image.jpg" alt="laplacian_image"></p>
+<p><img src="C:\Users\32685\Desktop\2024_homework_set_1\results\sobel_image.jpg" alt="sobel_image"></p>
+<p><img src="C:\Users\32685\Desktop\2024_homework_set_1\results\high_pass_image.jpg" alt="high_pass_image"></p>
+<h5 id="（2）gen-hybrid-image"><a href="#（2）gen-hybrid-image" class="headerlink" title="（2）gen_hybrid_image"></a>（2）gen_hybrid_image</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">gen_hybrid_image</span>(<span class="params">image1, image2, cutoff_frequency</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">     Inputs:</span></span><br><span class="line"><span class="string">     - image1 -&gt; The image from which to take the low frequencies.</span></span><br><span class="line"><span class="string">     - image2 -&gt; The image from which to take the high frequencies.</span></span><br><span class="line"><span class="string">     - cutoff_frequency -&gt; The standard deviation, in pixels, of the Gaussian</span></span><br><span class="line"><span class="string">                           blur that will remove high frequencies.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">     Task:</span></span><br><span class="line"><span class="string">     - Use my_imfilter to create &#x27;low_frequencies&#x27; and &#x27;high_frequencies&#x27;.</span></span><br><span class="line"><span class="string">     - Combine them to create &#x27;hybrid_image&#x27;.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">assert</span> image1.shape[<span class="number">0</span>] == image2.shape[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">assert</span> image1.shape[<span class="number">1</span>] == image2.shape[<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">assert</span> image1.shape[<span class="number">2</span>] == image2.shape[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Steps:</span></span><br><span class="line">    <span class="comment"># (1) Remove the high frequencies from image1 by blurring it. The amount of</span></span><br><span class="line">    <span class="comment">#     blur that works best will vary with different image pairs</span></span><br><span class="line">    <span class="comment"># generate a 1x(2k+1) gaussian kernel with mean=0 and sigma = s, see https://stackoverflow.com/questions/17190649/how-to-obtain-a-gaussian-filter-in-python</span></span><br><span class="line">    s, k = cutoff_frequency, cutoff_frequency*<span class="number">2</span></span><br><span class="line">    probs = np.asarray([exp(-z*z/(<span class="number">2</span>*s*s))/sqrt(<span class="number">2</span>*pi*s*s) <span class="keyword">for</span> z <span class="keyword">in</span> <span class="built_in">range</span>(-k,k+<span class="number">1</span>)], dtype=np.float32)</span><br><span class="line">    kernel = np.outer(probs, probs)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Your code here:</span></span><br><span class="line">    low_frequencies = my_imfilter(image1, kernel)</span><br><span class="line">    <span class="comment"># Replace with your implementation</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># (2) Remove the low frequencies from image2. The easiest way to do this is to</span></span><br><span class="line">    <span class="comment">#     subtract a blurred version of image2 from the original version of image2.</span></span><br><span class="line">    <span class="comment">#     This will give you an image centered at zero with negative values.</span></span><br><span class="line">    <span class="comment"># Your code here #</span></span><br><span class="line">    high_frequencies = image2 - my_imfilter(image2,kernel) <span class="comment"># Replace with your implementation</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># (3) Combine the high frequencies and low frequencies</span></span><br><span class="line">    <span class="comment"># Your code here #</span></span><br><span class="line">    hybrid_image = low_frequencies + high_frequencies <span class="comment"># Replace with your implementation</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># (4) At this point, you need to be aware that values larger than 1.0</span></span><br><span class="line">    <span class="comment"># or less than 0.0 may cause issues in the functions in Python for saving</span></span><br><span class="line">    <span class="comment"># images to disk. These are called in proj1_part2 after the call to </span></span><br><span class="line">    <span class="comment"># gen_hybrid_image().</span></span><br><span class="line">    <span class="comment"># One option is to clip (also called clamp) all values below 0.0 to 0.0, </span></span><br><span class="line">    <span class="comment"># and all values larger than 1.0 to 1.0.</span></span><br><span class="line">    hybrid_image = np.clip(hybrid_image, <span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> low_frequencies, high_frequencies, hybrid_image</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<p><img src="C:\Users\32685\Desktop\2024_homework_set_1\results\low_frequencies.jpg" alt="high_frequencies"></p>
+<p><img src="C:\Users\32685\Desktop\2024_homework_set_1\results\high_frequencies.jpg" alt="high_frequencies"></p>
+<p><img src="C:\Users\32685\Desktop\2024_homework_set_1\results\hybrid_image.jpg" alt="hybrid_image"></p>
+<p><img src="C:\Users\32685\Desktop\2024_homework_set_1\results\hybrid_image_scales.jpg" alt="hybrid_image_scales"></p>
+<h5 id="（3）Extra-requirements"><a href="#（3）Extra-requirements" class="headerlink" title="（3）Extra requirements"></a>（3）Extra requirements</h5><p>my_imfilter_fft</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">my_imfilter_fft</span>(<span class="params">image, kernel</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Your function should meet the requirements laid out in the extra credit section on</span></span><br><span class="line"><span class="string">    the project webpage. Apply a filter (using kernel) to an image. Return the filtered image.</span></span><br><span class="line"><span class="string">    Inputs</span></span><br><span class="line"><span class="string">    - image: numpy nd-array of dim (m,n) or (m, n, c)</span></span><br><span class="line"><span class="string">    - kernel: numpy nd-array of dim (k, l)</span></span><br><span class="line"><span class="string">    Returns</span></span><br><span class="line"><span class="string">    - filtered_image: numpy nd-array of dim of equal 2D size (m,n) or 3D size (m, n, c)</span></span><br><span class="line"><span class="string">    Errors if:</span></span><br><span class="line"><span class="string">    - filter/kernel has any even dimension -&gt; raise an Exception with a suitable error message.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    filtered_image = np.zeros(image.shape)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Check for even dimension</span></span><br><span class="line">    <span class="keyword">for</span> dim <span class="keyword">in</span> kernel.shape:</span><br><span class="line">        <span class="keyword">if</span> dim % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">raise</span> ValueError(<span class="string">&quot;Kernel dimension must be odd!&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Padding parameters</span></span><br><span class="line">    Hi, Wi, Di = image.shape</span><br><span class="line">    Hk, Wk = kernel.shape</span><br><span class="line">    pad_h = Hk // <span class="number">2</span></span><br><span class="line">    pad_w = Wk // <span class="number">2</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Pad image</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(image.shape) == <span class="number">2</span>:</span><br><span class="line">        padded_image = np.pad(image, ((pad_h, pad_h), (pad_w, pad_w)), mode=<span class="string">&#x27;constant&#x27;</span>)</span><br><span class="line">    <span class="keyword">elif</span> <span class="built_in">len</span>(image.shape) == <span class="number">3</span>:</span><br><span class="line">        padded_image = np.pad(image, ((pad_h, pad_h), (pad_w, pad_w), (<span class="number">0</span>, <span class="number">0</span>)), mode=<span class="string">&#x27;constant&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Perform FFT on image and kernel</span></span><br><span class="line">    fft_image = np.fft.fftshift(np.fft.fft2(padded_image, axes=(<span class="number">0</span>, <span class="number">1</span>)))</span><br><span class="line">    fft_kernel = np.fft.fftshift(np.fft.fft2(kernel, s=image.shape[:<span class="number">2</span>], axes=(<span class="number">0</span>, <span class="number">1</span>)))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Filter in the frequency domain</span></span><br><span class="line">    filtered_fft = fft_image * fft_kernel</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Perform inverse FFT</span></span><br><span class="line">    filtered_image = np.fft.ifft2(np.fft.ifftshift(filtered_fft, axes=(<span class="number">0</span>, <span class="number">1</span>)), axes=(<span class="number">0</span>, <span class="number">1</span>)).real</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Crop the filtered image to remove padding</span></span><br><span class="line">    filtered_image = filtered_image[pad_h:-pad_h, pad_w:-pad_w]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Clip values outside the valid range [-1, 1]</span></span><br><span class="line">    filtered_image = np.clip(filtered_image, -<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> filtered_image</span><br></pre></td></tr></table></figure>
+
 
       </section>
 
       
       
-
-      
-      
-        <section class="page-message-container layout-padding">
+        <nav class="article-nav">
           
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+      <div class="card-cover" background-image-lazy data-img="/img/1680584184078.png"></div>
+    
+    <div class="card-text">
+      
+        <a href="/2024/05/27/%E5%B9%B6%E8%A1%8C%E5%A4%A7%E4%BD%9C%E4%B8%9A%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Standford cs149 asset1</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+      <div class="card-cover" background-image-lazy data-img="/img/1680584184078.png"></div>
+    
+    <div class="card-text">
+      
+        <a href="/2024/05/27/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab2/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">图像处理lab2</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
+
+      <section class="page-message-container layout-padding">
+        
 
 
   
@@ -360,8 +469,7 @@
   
 
 
-        </section>
-      
+      </section>
     </div>
     <div class="widget-info">
       <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -398,6 +506,20 @@
     </div>
   </div>
 </section>
+
+      
+<section class="widget-toc widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-toc" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M134.50666666 767.46666668H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.23999999v50.13333333c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H134.50666666c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.13333333c0.10666668-27.73333333 22.50666668-50.24000001 50.24000001-50.24000001zM84.37333332 541.65333333h326.18666669c27.73333333 0 50.24000001 22.39999999 50.23999999 50.13333334v50.24000001c0 27.73333333-22.50666668 50.24000001-50.24000002 50.23999999H84.37333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.23999999v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333334zM134.50666666 315.83999999H460.8c27.73333333 0 50.24000001 22.50666668 50.24000001 50.24000001v50.24000001c0 27.73333333-22.50666668 50.13333334-50.24000001 50.13333333H134.50666666c-27.73333333 0-50.24000001-22.39999999-50.23999999-50.13333333v-50.24000001c0.10666668-27.84000001 22.50666668-50.24000001 50.24000001-50.23999999zM209.81333332 89.91999999h326.18666671c27.73333333 0 50.24000001 22.39999999 50.23999997 50.13333335v50.23999999c0 27.73333333-22.50666668 50.24000001-50.24000001 50.24000001H209.81333332c-27.73333333 0-50.24000001-22.50666668-50.23999999-50.24000001v-50.24000001c0-27.73333333 22.50666668-50.13333334 50.24000001-50.13333333zM692.05333333 623.36l274.66666669 176.00000002c23.36000001 14.93333333 30.08 45.97333334 15.14666666 69.33333332L954.77333334 910.93333333c-14.93333333 23.25333334-45.97333334 30.08-69.33333335 15.14666667l-274.66666666-176c-23.36000001-14.93333333-30.08-45.97333334-15.14666667-69.33333333l27.09333334-42.24000001c14.93333333-23.36000001 46.08000001-30.08 69.33333333-15.14666666z" fill="currentColor"></path>
+</svg>
+    <span>TOC</span>
+  </div>
+  <div class="widget-body">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86lab1"><span class="toc-number">1.</span> <span class="toc-text">图像处理lab1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Programming"><span class="toc-number">1.1.</span> <span class="toc-text">2.Programming</span></a></li></ol></li></ol>
+  </div>
+</section>
+
 
       
 <section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -455,7 +577,6 @@
     </div>
   </article>
 </div>
-
 
     <!-- footer container -->
 <footer id="footer" class="footer">
